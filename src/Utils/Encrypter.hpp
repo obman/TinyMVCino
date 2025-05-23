@@ -16,7 +16,6 @@ namespace TinyMVCino {
         }
       
         char saltedInput[128];
-        Serial.println("Salt: " + String(TINYMVCINO_CHIPER_SALT));
         snprintf(saltedInput, sizeof(saltedInput), "%s%s", value, TINYMVCINO_CHIPER_SALT);
       
         unsigned char hash[32]; // SHA-256 produces 32-byte hash
