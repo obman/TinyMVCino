@@ -4,7 +4,7 @@
 #include "IDal.hpp"
 
 namespace TinyMVCino {
-  class INsvDal : public IDal {
+  class INvsDal : public IDal {
     protected:
         mutable Preferences preferences;
         const char* prefNamespace;
@@ -88,8 +88,8 @@ namespace TinyMVCino {
         }
     
     public:
-        INsvDal(const char* ns) : prefNamespace(ns) {};
-        virtual ~INsvDal() = default;
+        INvsDal(const char* ns) : prefNamespace(ns) {};
+        virtual ~INvsDal() = default;
     };
 }
   
