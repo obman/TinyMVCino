@@ -16,39 +16,7 @@ namespace TinyMVCino {
             this->preferences.end();
         }
 
-        String getValue(const char* key, const String& defaultValue = "") {
-            return this->preferences.getString(key, defaultValue);
-        }
-        int getValue(const char* key, const int& defaultValue) {
-            return this->preferences.getInt(key, defaultValue);
-        }
-        bool getValue(const char* key, const bool& defaultValue) {
-            return this->preferences.getBool(key, defaultValue);
-        }
-        float getValue(const char* key, const float& defaultValue) {
-            return this->preferences.getFloat(key, defaultValue);
-        }
-        double getValue(const char* key, const double& defaultValue) {
-            return this->preferences.getDouble(key, defaultValue);
-        }
-
-        bool putValue(const char* key, const char* value) {
-            return this->preferences.putString(key, value);
-        }
-        bool putValue(const char* key, int value) {
-            return this->preferences.putInt(key, value);
-        }
-        bool putValue(const char* key, bool value) {
-            return this->preferences.putBool(key, value);
-        }
-        bool putValue(const char* key, float value) {
-            return this->preferences.putFloat(key, value);
-        }
-        bool putValue(const char* key, double value) {
-            return this->preferences.putDouble(key, value);
-        }
-
-        /*String getDalDataString(const char* key, const String& defaultVal) override {
+        String getDalDataString(const char* key, const String& defaultVal) override {
             open();
             String value = this->preferences.getString(key, defaultVal);
             close();
@@ -117,27 +85,11 @@ namespace TinyMVCino {
             bool result = this->preferences.putBool(key, value);
             close();
             return result;
-        }*/
+        }
     
     public:
         INsvDal(const char* ns) : prefNamespace(ns) {};
         virtual ~INsvDal() = default;
-
-        template <typename T>
-        T getDalData(const char* key, const T& defaultValue) {
-            this->open();
-            T data = this->getValue(key, defaultValue);
-            this->close();
-            return data;
-        }
-
-        template <typename T>
-        bool storeDalData(const char* key, const T& value) {
-            this->open();
-            bool result = this->putValue(key, value);
-            this->close();
-            return result;
-        }
     };
 }
   

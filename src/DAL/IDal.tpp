@@ -1,4 +1,4 @@
-/*#include "IDal.hpp"
+#include "IDal.hpp"
 
 // GET
 template<>
@@ -50,4 +50,4 @@ inline bool TinyMVCino::IDal::storeDalData<double>(const char* key, const double
 template<>
 inline bool TinyMVCino::IDal::storeDalData<bool>(const char* key, const bool& value) {
   return this->storeDalDataBool(key, value);
-}*/
+}
