@@ -42,11 +42,9 @@ namespace TinyMVCino {
 
       static bool verify(const char* plainText, const char* storedHash) {
         if (!plainText || !storedHash) return false;
-      
         char hashBuffer[TINYMVCINO_HASH_LENGTH];
         strncpy(hashBuffer, plainText, sizeof(hashBuffer) - 1);
         hashBuffer[sizeof(hashBuffer) - 1] = '\0';
-      
         TinyMVCino::Encrypter::hash(hashBuffer);
         return strcmp(hashBuffer, storedHash) == 0;
       };

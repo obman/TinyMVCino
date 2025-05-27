@@ -9,7 +9,7 @@ namespace TinyMVCino {
     unsigned long last = storage.getULong(TINYMVCINO_SERVER_FAILED_LAST_LOGIN_TIME_PREF_KEY, 0);
     storage.end();
   
-    if (attempts >= 5 && (millis() - last < 180000)) { // blocked for 180s // TODO: move time to config
+    if (attempts >= 5 && (millis() - last < TINYMVCINO_SERVER_LOGIN_BLOCK_TIME)) { // blocked for 180s 
       return true;
     }
     return false;

@@ -8,6 +8,6 @@ namespace TinyMVCino {
   class IResource {
     public:
       virtual ~IResource() = default;
-      virtual void createResource(JsonDocument& json, std::shared_ptr<T> dto, const char* username = nullptr) = 0;
+      virtual void createResource(JsonDocument& json, std::shared_ptr<T> dto = nullptr, const char* username = nullptr) = 0;
   };
 }
